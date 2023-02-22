@@ -1,0 +1,102 @@
+body {
+  background-color:aquamarine;
+}
+
+#botonera {
+  background-color: rgba(6, 180, 180, 0.547);
+  position: sticky;
+  top: 0;
+  padding: 10px 30px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  -webkit-box-shadow: 0px 0px 15px 0px #6b1a64;
+  box-shadow: 0px 0px 15px 0px #5a0211;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+}
+
+#botonera ul li {
+  list-style: none;
+  margin-right: 20px;
+  justify-content: center;
+}
+
+#botonera ul li a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #4b4a4c;
+}
+
+#botonera ul li a:hover {
+  color: rgb(202, 85, 12);
+  font-weight: 600;
+
+}
+
+.navbar-brand{
+  margin: 10px;
+  padding: 10px;
+}
+
+.d-flex{
+  align-items: center;
+}
+
+.card{
+  width: 18rem;
+  margin: 10px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.df-itemlist{
+  margin: 20px;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  grid-template-rows: 2fr 2fr;
+  justify-content: center;
+  align-items: center;
+  justify-items: center;
+}
+
+.greeting{
+  margin: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.footer {
+  -webkit-box-shadow: 0px 0px 15px 0px #6b1a64;
+  box-shadow: 0px 0px 15px 0px #5a0211;
+}
+
+
+.df-footer{
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+-webkit-box-shadow: 0px 0px 15px 0px #6b1a64;
+box-shadow: 0px 0px 15px 0px #5a0211;
+}
+
+.footer-left{
+  display: flex;
+  flex-direction: row;
+  margin: 20px;
+  padding: 20px;
+  align-items: center;
+}
+
+.location{
+  margin: 10px;
+  padding: 10px;
+}
+
+
+
+
