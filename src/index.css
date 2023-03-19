@@ -1,12 +1,12 @@
 body {
-  background-color:aquamarine;
+  background-color:rgb(145, 237, 181);
 }
 
 #botonera {
-  background-color: rgba(6, 180, 180, 0.547);
+  background-color: rgba(164, 251, 154, 0.96);
   position: sticky;
   top: 0;
-  padding: 10px 30px;
+  padding: 10px 25px;
   display: flex;
   justify-content: center;
   margin-bottom: 50px;
@@ -15,7 +15,6 @@ body {
   font-family: "Roboto", sans-serif;
   font-size: 15px;
 }
-
 #botonera ul li {
   list-style: none;
   margin-right: 20px;
@@ -32,11 +31,6 @@ body {
   color: rgb(202, 85, 12);
   font-weight: 600;
 
-}
-
-.navbar-brand{
-  margin: 10px;
-  padding: 10px;
 }
 
 .d-flex{
@@ -74,29 +68,28 @@ body {
   box-shadow: 0px 0px 15px 0px #5a0211;
 }
 
-
-.df-footer{
-display: flex;
-flex-direction: row;
-justify-content: center;
-align-items: center;
--webkit-box-shadow: 0px 0px 15px 0px #6b1a64;
-box-shadow: 0px 0px 15px 0px #5a0211;
+#footer-main {
+  color:#5a0211
 }
 
-.footer-left{
-  display: flex;
-  flex-direction: row;
-  margin: 20px;
-  padding: 20px;
-  align-items: center;
+#footer-links.row {
+  text-decoration: none;
+  color:grey
+
 }
 
-.location{
-  margin: 10px;
-  padding: 10px;
+#footer-links.row ul li a {
+  font-size: 1rem;
+  text-decoration: none;
+  color: #4b4a4c;
 }
+#footer-links.row ul li a:hover {
+  color: rgb(202, 85, 12);
+  font-weight: 600;
 
-
-
+}
+.h6{
+  text-decoration: none;
+  color:grey
+}
 

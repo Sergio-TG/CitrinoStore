@@ -9,17 +9,17 @@ const App = () => {
 
   return (
     <BrowserRouter>
-      
+
       <NavBar />
 
       <Routes>
-        <Route exact path="/" element={<ItemListContainer greeting="Bienvenidos a Citrino Store, el mundo de los Cristales" />}/>
-        <Route exact path="/categoria/:id" element={<ItemListContainer />}/>
+        <Route exact path="/" element={<ItemListContainer greeting="Bienvenidos a Citrino Store, el mundo de los Cristales" />} />
+        <Route exact path="/categoria/:id" element={<ItemListContainer />} />
         <Route exact path="/item/:id" element={<ItemDetailContainer />} />
       </Routes>
 
-    <Footer />
-    
+      <Footer />
+
     </BrowserRouter>
   );
 };
