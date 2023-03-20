@@ -2,7 +2,7 @@ import React from 'react'
 
 const Footer = () => {
   return (
-    <footer className="footer pt-5 pb-4 pb-lg-5 mt-2 mt-md-0 sticky" id="pie">
+    <footer className="footer bg-ligth pt-5 pb-4 pb-lg-5 mt-2 mt-md-0 sticky" id="pie">
       <div className="container pt-lg-4">
         <div className="row pb-5">
           <div className="col-lg-4 col-md-6">
@@ -26,21 +26,9 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-              <div className="col-xl-4 col-lg-3" id="social-footer">
-                <h6 className="mb-2">
-                  <a href="#social-links" classNameName="d-block text-dark dropdown-toggle d-lg-none py-2" data-bs-toggle="collapse">Socials</a>
-                </h6>
-                <div id="social-links" className="collapse d-lg-block" data-bs-parent="#footer-links">
-                  <ul className="nav flex-column mb-2 mb-lg-0">
-                    <li className="nav-item"><a href="https://www.facebook.com/" className="nav-link d-inline-block px-0 pt-1 pb-2">Facebook</a></li>
-                    <li className="nav-item"><a href="https://www.twitter.com/" className="nav-link d-inline-block px-0 pt-1 pb-2">Twitter</a></li>
-                    <li className="nav-item"><a href="https://www.instagram.com/" className="nav-link d-inline-block px-0 pt-1 pb-2">Instagram</a></li>
-                  </ul>
-                </div>
-              </div>
-              <div className="col-xl-4 col-lg-5 pt-2 pt-lg-0">
+              <div className="col-xl-4 col-lg-5 pt-2 pt-lg-0" id="text-footer">
                 <h6 className="mb-2">Consultas 341 6769427</h6>
-                <a href="mailto:email@example.com" className="fw-medium">citrinostore@gmail.com</a>
+                <a href="mailto:citrinostore@gmail.com" className="fw-medium">citrinostore@gmail.com</a>
               </div>
             </div>
           </div>

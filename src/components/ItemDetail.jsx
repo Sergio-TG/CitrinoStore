@@ -1,25 +1,33 @@
 import React from 'react'
 import ItemCount from './ItemCount'
 
-const ItemDetail = ({ productDetail}) => {
-       return (
-        <div className="df-itemdetail">
-            <div className="card">
-            <img src={productDetail.imagen} className="card-img-top"/>
-                    <div className="card-body">
-                        <h5 className="card-title">{productDetail.nombre}</h5>
-                        <p className="card-text">${productDetail.precio}</p>
-                    </div>
-                    <ul className="list-group list-group-flush">
-                        <li className="list-group-item">Categoria: {productDetail.categoria}</li>
-                        <li className="list-group-item">Stock: {productDetail.stock}</li>
-                    </ul>
-                    <div className="card-body">
-                    <div><ItemCount /></div>
-                    </div>
+const ItemDetail = ({ detalleProducto }) => {
+
+    const { nombre, descripcion, precio, cantidad, imagen, id } = detalleProducto;
+
+    function formatNumber(number) {
+        return new Intl.NumberFormat().format(number)
+    }
+
+    return (
+        <div>
+            <div className="card df-itemdetail" key={id}>
+                <img
+                    src={`./public/imagenes/${imagen}.jpg`}
+                    className="card-img-top imgProd"
+                    alt="..."
+                />
+                <div className="card-body bg-warning">
+                    <h5 className="card-title fw-bold">{nombre}</h5>
+                    <p className="card-text fw-bolder">
+                        Precio ARS: ${formatNumber(precio)}
+                    </p>
+                    <p className="card-text">Descripcion: {descripcion}</p>
+                    <p className="card-text fw-bolder">Stock: {cantidad}</p>
+                    <ItemCount stock={cantidad} id={id} precio={precio} nombre={nombre} imagen={imagen} />
+                </div>
             </div>
         </div>
-       
     );
 };
 

@@ -1,3 +1,14 @@
+* {
+  margin: 0;
+  padding: 0;
+
+}
+
+hr{
+  width: 100%;
+  border: 0.3px solid rgb(255, 224, 23);
+}
+
 body {
   background-color:rgb(145, 237, 181);
 }
@@ -33,6 +44,13 @@ body {
 
 }
 
+.btn-Carrito{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
 .d-flex{
   align-items: center;
 }
@@ -64,6 +82,7 @@ body {
 }
 
 .footer {
+  background-color:rgba(164, 251, 154, 0.96) ;
   -webkit-box-shadow: 0px 0px 15px 0px #6b1a64;
   box-shadow: 0px 0px 15px 0px #5a0211;
 }
@@ -85,11 +104,163 @@ body {
 }
 #footer-links.row ul li a:hover {
   color: rgb(202, 85, 12);
-  font-weight: 600;
+  font-weight: 700;
 
 }
+
+.fw-medium {
+  text-decoration: none;
+  color:grey;
+}
+
+#text-footer :hover {
+  color: rgb(202, 85, 12);
+  font-weight: 700;
+  }
+
 .h6{
   text-decoration: none;
   color:grey
+}
+
+.BloqueProd{
+  margin: 20px auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 30px;
+  justify-content: center;
+}
+.listProd{
+  box-shadow: 1px 1px 40px black;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  transition: all 2s;
+}
+.card-body{
+  height: inherit;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.listProd:hover{
+  transform: scale(1.1);
+}
+
+.imgProd{
+  width: 250px;
+  margin: 0 auto;
+}
+.cardProd{
+  height: 570px;
+  text-align: center;
+  width: 300px;
+}
+
+.EyeVisibility{
+  font-size: 1.3rem;
+  align-items: center;
+}
+
+.BloqueCart{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 30px auto;
+}
+.bloqWidget{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+  gap: 50px;
+}
+.cartWidget{
+  width: 550px;
+  height: 220px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.text-widget{
+  text-align: center;
+}
+.imgWidget{
+  width: 130px;
+}
+.spanInfo{
+  color: red;
+}
+.buttonEliminar{
+  border: 0px solid black;
+  background-color: white;
+  color: red;
+  font-size: 1.3rem;
+  transition: all 1s;
+  margin: auto 10px;
+}
+.buttonEliminar:hover{
+  color: rgb(68, 40, 40);
+  transform: scale(1.1);
+}
+.bloqButtonClear{
+  display: flex;
+  align-items: center;
+  justify-content: end;
+}
+.btnClear{
+  font-weight: bolder;
+  width: 100px;
+  margin: 50px;
+}
+.precioTotal{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.4rem;
+  font-weight: bolder;
+  border-end-start-radius: 25px;
+  border-top-left-radius: 25px;
+  height: 40px;
+  width: 300px;
+  margin: 50px 0;
+  color: black;
+  background-color: beige;
+}
+
+.d-flex {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  align-items: center;
+}
+.SpanCount{
+  font-weight: bold;
+  margin: 10px;
+}
+
+.cardProdDetail{
+  margin: 20px auto;
+  height: 650px;
+  text-align: center;
+  width: 500px;
+}
+
+.bloqueLoading{
+  margin-top: 50px; 
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+.circule{
+  margin: 15px;
+  width: 70px;
+  height: 70px;
 }
 
