@@ -20,9 +20,9 @@ const Footer = () => {
                 </h6>
                 <div id="useful-links" className="collapse d-lg-block" data-bs-parent="#footer-links">
                   <ul className="nav flex-column pb-lg-1 mb-lg-3">
-                    <li className="nav-item"><a href="#" className="nav-link d-inline-block px-0 pt-1 pb-2">Home</a></li>
-                    <li className="nav-item"><a href="#" className="nav-link d-inline-block px-0 pt-1 pb-2">Productos</a></li>
-                    <li className="nav-item"><a href="#" className="nav-link d-inline-block px-0 pt-1 pb-2">Contacto</a></li>
+                    <li className="nav-item"><a href="/" className="nav-link d-inline-block px-0 pt-1 pb-2">Home</a></li>
+                    <li className="nav-item"><a href="/" className="nav-link d-inline-block px-0 pt-1 pb-2">Productos</a></li>
+                    <li className="nav-item"><a href="/" className="nav-link d-inline-block px-0 pt-1 pb-2">Contacto</a></li>
                   </ul>
                 </div>
               </div>

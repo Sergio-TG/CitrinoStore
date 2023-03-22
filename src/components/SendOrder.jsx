@@ -1,91 +1,61 @@
 import React, { useContext, useState } from "react";
 import "../index.css";
-import { CartContext } from "../context/CartContext.jsx";
+import { CounterContext } from "../context/CartContext";
 import { collection, getFirestore, addDoc } from "firebase/firestore";
+import Swal from "sweetalert2";
 
+const SendOrder = () => {
+    const { cart, calcularTotalCompra, removeForm } = useContext(CounterContext)
+    const [ordenID, setOrdenID] = useState(null)
+    const [nombre, setNombre] = useState("")
+    const [email, setEmail] = useState("");
+    const handleSubmit = (e) => {
 
-export const CartOrder = () => {
-    const { cartList, setCartList, fullPayment } = useContext(CartContext);
-    const [name, setName] = useState("")
-    const [phone, setPhone] = useState("")
-    const [email, setEmail] = useState("")
-    const [orderId, setOrderId] = useState("")
-    const [loading, setLoading] = useState(false)
-  
-    const orderGenerator = () => {      
-  
-      const date = new Date()
-      const order = {
-        buyer: { name: name, phone: phone, email: email },
-        items: cartList.map(item => ({ id: item.id, nombre: item.nombre, cantidad: item.cantidad, precio: item.precio, precio_total: item.cantidad * item.precio })),
-        total: fullPayment(),
-        order_date: `${date}`
-      }
-  
-      const ordersCollection = collection(db, "orders")
-      addDoc(ordersCollection, order).then(({ id }) => setOrderId(id))
-      setLoading(true)
-      setCartList([])
-  
-      cartList.forEach(async item => {
-        const ItemRef = doc(collection(db, 'cristales'), item.id)
-        await updateDoc(ItemRef, {
-          stock: increment(-item.cantidad)
-        })
-      })
+        const db = getFirestore();
+        e.preventDefault()
+        const order = {
+            buyer: {
+                nombre: nombre,
+                email: email
+            },
+            items: cart.map(product => ({ id: product.id, nombre: product.producto, precio: product.precio, cantidad: product.cantidad })),
+            precio_total: calcularTotalCompra()
+        }
+
+        const orderCollection = collection(db, "orden")
+        addDoc(orderCollection, order).then(({ id }) => {
+            setOrdenID(id)
+            Swal.fire(
+                'Compra realizada!',
+                'Su ID de compra es: <br> <b class="spanInfo">' + id + '</b>',
+                'success'
+            )
+            removeForm()
+        }
+        )
     }
-  
+
     return (
-      <>
-        {loading}
-        <div className="container cartBody">
-          <div className="row my-5">
-            <div className="col-md-6">
-              <form>
-                <div className="mb-3">
-                  <label id="nombre" className="form-label">Nombre:</label>
-                  <input type="text" className="form-control" placeholder="Eva Luna" onInput={(e) => { setName(e.target.value) }} />
-                </div>
-                <div className="mb-3">
-                  <label id="telefono" className="form-label">Teléfono:</label>
-                  <input type="tel" className="form-control" id="telefono" placeholder="37339675"  onInput={(e) => { setPhone(e.target.value) }} />
-                </div>
-                <div className="mb-3">
-                  <label id="email" className="form-label">Email:</label>
-                  <input type="email" className="form-control" id="email" placeholder="ventaonline@mundolibre.com" onInput={(e) => { setEmail(e.target.value) }} />
-                </div>
-                <button type="button" className="cart_endBtn " onClick={orderGenerator}>Generar Orden</button>
-              </form>
+        <>
+            <div className='BloqueForm'>
+                <form onSubmit={handleSubmit}>
+                    <div className="mb-3">
+                        <label className="form-label">Email address</label>
+                        <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value
+                        )
+                        } required />
+                        <label className="form-label">Nombre y apellido</label>
+                        <input type="text" className="form-control" id="exampleInputEmail1" onChange={(e) => setNombre(e.target.value
+                        )
+                        } required />
+                    </div>
+                    <div className='botonEnviar'>
+                        <button type="submit" className="btn btn-warning">¡Comprar!</button>
+                    </div>
+                </form>
             </div>
-            <div className="col-md-6">
-              <table className="table">
-                <tbody>
-                  {cartList.map(item => (
-                    <tr key={item.id}>
-                      <td><img src={item.imagen} alt={item.nombre} width={50} /></td>
-                      <td className="align-middle">{item.nombre}</td>
-                      <td className="align-middle text-center">{item.cantidad}</td>
-                      <td className="align-middle text-end">${(item.cantidad * item.precio).toLocaleString()}</td>
-                    </tr>
-                  ))
-                  }
-                  <tr>
-                    <td colSpan={2}>&nbsp;</td>
-                    <td className="text-end"><b>Total a Pagar </b></td>
-                    <td className="text-end"><b>${fullPayment().toLocaleString()}</b></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div className="row">
-            <div>
-              {orderId !== "" ? <Navigate to={"/CartGreeting/" + orderId} /> : ""}
-            </div>
-          </div>
-        </div>
-      </>
+        </>
     )
-  }
-  
-  export default CartOrder;
+}
+
+export default SendOrder;

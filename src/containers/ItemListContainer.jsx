@@ -8,7 +8,7 @@ import "../index.css"
 
 const ItemListContainer = ({ greeting }) => {
 
-  const { categoriaid } = useParams();
+  const { categoryid } = useParams();
   const [loading, setLoading] = useState(true);
   const [listaProductos, setListaProductos] = useState([]);
 
@@ -16,18 +16,18 @@ const ItemListContainer = ({ greeting }) => {
       setLoading(true);
 
       const db = getFirestore();
-      const itemsCollection = categoriaid ? query(collection(db, "cristales"), where("categoria", "==", categoriaid)) : collection(db, "cristales");
+      const itemsCollection = categoryid ? query(collection(db, "cristales"), where("category", "==", categoryid)) : collection(db, "cristales");
       getDocs(itemsCollection)
           .then((snapshot) => {
               setListaProductos(snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() })));
           })
           .catch((error) => console.log(error))
           .finally(() => setLoading(false));
-  }, [categoriaid]);
+  }, [categoryid]);
 
   return (
       <>
-          <h1 className="Cristales del Mundo">{greeting}</h1>
+          <h3 className="animate__animated animate__zoomIn">{greeting}</h3>
           {loading ? <Loading /> : <ItemList product={listaProductos} />}
       </>
   );

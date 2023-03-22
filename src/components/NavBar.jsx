@@ -16,16 +16,16 @@ const NavBar = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" aria-current="page" href="/">Home</a>
+                            <a Link className="nav-link" aria-current="page" to={"/"}>Home</a>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" href="/" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Productos
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><Link className="dropdown-item" to={`/categoria/${"cristales"}`}>Cristales</Link></li>
-                                <li><Link className="dropdown-item" to={`/categoria/${"gemas"}`}>Gemas</Link></li>
-                                <li><Link className="dropdown-item" to={`/categoria/${"piedras"}`}>Piedras</Link></li>
+                                <li><Link className="dropdown-item" to={`/category/${"cristales"}`}>Cristales</Link></li>
+                                <li><Link className="dropdown-item" to={`/category/${"gemas"}`}>Gemas</Link></li>
+                                <li><Link className="dropdown-item" to="/category/piedras">Piedras</Link></li>
                             </ul>
                         </li>
                     </ul>

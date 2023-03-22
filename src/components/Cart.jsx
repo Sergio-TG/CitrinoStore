@@ -1,25 +1,26 @@
 import React, { useState } from "react";
-import "../index.css";
 import { useContext } from "react";
-import { CartContext } from "../context/CartContext";
+import { CounterContext } from "../context/CartContext";
 import SendOrder from "./SendOrder";
-import { BsFillTrash3Fill } from "react-icons/bs";
+import { BsFillTrashFill } from "react-icons/bs";
+import CartLoading from "./CartLoading";
+import "../index.css";
 
 const Cart = () => {
     const { cart, removeItem, removeAll, calcularTotalCompra } =
-        useContext(CartContext);
+        useContext(CounterContext);
 
     function formatNumber(number) {
         return new Intl.NumberFormat().format(number);
     }
 
     return !cart.length ? (
-        <NoItemsLoad />
+        <CartLoading />
     ) : (
         <>
             <div className="bloqButtonClear">
                 <button className="btn btn-danger btnClear" onClick={removeAll}>
-                    Vaciar carrito
+                    Vaciar Carrito
                 </button>
             </div>
             <div className="bloqWidget">
@@ -28,12 +29,12 @@ const Cart = () => {
                         <div key={item.id}>
                             <div className="card cardWidget">
                                 <img
-                                    src={`../src/assets/img_producto/${item.imagen}.jpg`}
+                                    src={`./public/imagenes/${item.img}.jpg`}
                                     className="card-img-top imgWidget"
                                     alt="..."
                                 />
                                 <div className="card-body text-widget">
-                                    <h5 className="card-title fw-bold">{item.nombre}</h5>
+                                    <h5 className="card-title fw-bold">{item.producto}</h5>
                                     <p className="card-text fw-bolder">
                                         Precio:
                                         <span className="spanInfo">
@@ -42,11 +43,11 @@ const Cart = () => {
                                         </span>
                                     </p>
                                     <p className="card-text fw-bolder">
-                                        Cantidad seleccionada:
+                                        Cantidad:
                                         <span className="spanInfo"> {item.cantidad}</span>
                                     </p>
                                     <p className="card-text fw-bolder">
-                                        Total:
+                                        Subtotal:
                                         <span className="spanInfo">
                                             {" "}
                                             ${formatNumber(item.precio * item.cantidad)}{" "}
@@ -58,7 +59,7 @@ const Cart = () => {
                                         className="buttonEliminar"
                                         onClick={() => removeItem(item.id)}
                                     >
-                                        <BsFillTrash3Fill />
+                                        <BsFillTrashFill />
                                     </button>
                                 </div>
                             </div>
@@ -68,7 +69,7 @@ const Cart = () => {
             </div>
             <div className="bloqButtonClear">
                 <p className="precioTotal">
-                    Precio total de Compra:{" "}
+                    Total de Compra :{" "}
                     <span className="spanInfo">
                         ${formatNumber(calcularTotalCompra())}
                     </span>

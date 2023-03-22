@@ -44,35 +44,6 @@ body {
 
 }
 
-.btn-Carrito{
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-}
-
-.d-flex{
-  align-items: center;
-}
-
-.card{
-  width: 18rem;
-  margin: 10px;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-}
-
-.df-itemlist{
-  margin: 20px;
-  padding: 20px;
-  display: grid;
-  grid-template-columns: 2fr 2fr 2fr;
-  grid-template-rows: 2fr 2fr;
-  justify-content: center;
-  align-items: center;
-  justify-items: center;
-}
 
 .greeting{
   margin: 20px;
@@ -121,6 +92,29 @@ body {
 .h6{
   text-decoration: none;
   color:grey
+}
+
+
+.TituloPrincipal{
+  color: beige;
+  text-align: center;
+  font-size: 110px;
+  padding: 50px;
+}
+
+.logo{
+  width: 100px;
+  border-radius: 100%;
+}
+.bloqueNav{
+  justify-content: center;
+}
+
+.bloqueBoton{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .BloqueProd{
@@ -179,7 +173,7 @@ body {
   margin: auto;
   gap: 50px;
 }
-.cartWidget{
+.cardWidget{
   width: 550px;
   height: 220px;
   display: flex;
@@ -233,7 +227,7 @@ body {
   background-color: beige;
 }
 
-.d-flex {
+.BloqueCount{
   display: flex;
   padding: 10px;
   justify-content: center;
@@ -260,7 +254,78 @@ body {
 }
 .circule{
   margin: 15px;
-  width: 70px;
-  height: 70px;
+  width: 100px;
+  height: 100px;
 }
 
+.bloqueNoItems{
+  background-color: rgb(54, 54, 54);
+  border-radius: 25px;
+  width: 50%;
+  padding-top: 20px;
+  margin: 100px auto;
+  font-size: 1.3rem;
+  color: beige;
+  text-align: center;
+  box-shadow: 1px 1px 50px wheat;
+}
+
+.BloqueForm{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;
+  width: 50%;
+  color: beige;
+  background-color: rgb(54, 54, 54);
+  border-radius: 25px;
+  box-shadow: 1px 1px 50px wheat;
+}
+.botonEnviar{
+  width: 100px;
+  margin: 10px auto;
+}
+
+
+.spinner {
+  height: 70vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.loader {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: inline-box;
+  border-top: 6px solid #eb7405;
+  border-right: 6px solid transparent;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+.loader::after {
+  content: '';
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  border-left: 6px solid #21d60c;
+  border-bottom: 6px solid transparent;
+  animation: rotation 0.5s linear infinite reverse;
+}
+
+@keyframes rotation {
+  0% {
+      transform: rotate(0deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}

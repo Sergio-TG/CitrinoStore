@@ -1,12 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { CartContext } from "../context/CartContext";
+import { CounterContext } from "../context/CartContext";
 import Swal from "sweetalert2";
+import { useContext, useState } from "react";
+import { BsFillEyeFill } from "react-icons/bs";
 import "../index.css";
 
-const Item = ({ item }) => {
 
-    const { setCart } = useContext(CartContext);
+function Item({ id, producto, precio, cantidad, img }) {
+    function formatNumber(number) {
+        return new Intl.NumberFormat().format(number);
+    }
+
+    const { setCart } = useContext(CounterContext);
     let [Agregar] = useState(1);
 
     const agregarAlCarrito = () => {
@@ -15,9 +21,9 @@ const Item = ({ item }) => {
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Producto agregado al carrito",
+                title: "Se agrego al carrito",
                 showConfirmButton: false,
-                timer: 1300,
+                timer: 1500,
             });
 
             if (itemAgregado) {
@@ -29,21 +35,34 @@ const Item = ({ item }) => {
                     }
                 });
             } else {
-                return [...agrItems, { id, cantidad: Agregar, precio, nombre, imagen }];
+                return [...agrItems, { id, cantidad: Agregar, precio, producto, img }];
             }
         });
     };
 
     return (
-        <div>
-            <div className="card cardProd rounded-4" key={id}>
-                <img src={`./public/imagenes/${imagen}.jpg`} className="card-img-top"></img>
+        <>
+            <div className="card cardProd" key={id}>
+                <img
+                    src={`./public/imagenes/${img}.jpg`}
+                    className="card-img-top imgProd"
+                    alt="..."
+                />
                 <div className="card-body">
-                    <h3 className="card-title">{nombre}</h3>
-                    <p className="card-text">${precio}</p>
-                    <p className="card-text">Stock: {cantidad}</p>
+                    <h5 className="card-title fw-bold">{producto}</h5>
+                    <p className="card-text fw-bolder">
+                        Precio: ${formatNumber(precio)}
+                    </p>
+                    <p className="card-text fw-bolder">Stock: {cantidad}</p>
                     <hr />
-                    <Link className="btn btn-outline-secondary" to={`/item/${id}`}> Ver Detalle</Link>
+                    <Link to={`/item/${id}`}>
+                        <button
+                            className="btn EyeVisibility"
+                            title="Entrar en detalles del producto."
+                        >
+                            <BsFillEyeFill /> Detalle
+                        </button>
+                    </Link>
                     <button
                         className="btn btn-secondary"
                         onClick={() => agregarAlCarrito()}
@@ -52,8 +71,7 @@ const Item = ({ item }) => {
                     </button>
                 </div>
             </div>
-        </div>
-
+        </>
     );
 };
 

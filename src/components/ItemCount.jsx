@@ -1,13 +1,12 @@
 import React from "react";
 import { useState, useContext } from "react";
-import { CartContext } from '../context/CartContext.jsx'
-import Swal from 'sweetalert2'
-import "../index.css"
+import { CounterContext } from "../context/CartContext";
+import Swal from "sweetalert2";
+import "../index.css";
 
+const ItemCount = ({ stock, id, precio, producto, img }) => {
 
-const ItemCount = ({ stock, id, precio, nombre, imagen }) => {
-
-    const { setCart } = useContext(CartContext);
+    const { setCart } = useContext(CounterContext);
     let [Agregar, SetAgregar] = useState(1)
 
     const AgregarProd = () => {
@@ -28,7 +27,7 @@ const ItemCount = ({ stock, id, precio, nombre, imagen }) => {
             Swal.fire({
                 position: 'center',
                 icon: 'success',
-                title: 'Se agrego al carrito',
+                title: 'El item se agregó al carrito',
                 showConfirmButton: false,
                 timer: 1500
             })
@@ -42,14 +41,14 @@ const ItemCount = ({ stock, id, precio, nombre, imagen }) => {
                     }
                 })
             } else {
-                return [...agrItems, { id, cantidad: Agregar, precio, nombre, imagen }];
+                return [...agrItems, { id, cantidad: Agregar, precio, producto, img }];
             }
         })
     }
 
     return (
         <>
-            <div className="d-flex flex-column">
+            <div className='BloqueCount'>
                 <button onClick={Descontar} className="btn btn-secondary">-</button>
                 <span className='SpanCount'>{Agregar} </span>
                 <button onClick={AgregarProd} className="btn btn-secondary">+</button>
@@ -57,8 +56,7 @@ const ItemCount = ({ stock, id, precio, nombre, imagen }) => {
             <div>
                 <button className="btn btn-secondary" onClick={() => agregarAlCarrito()}>Agregar al carrito</button>
             </div>
-       </>
-
+        </>
     );
 };
 
