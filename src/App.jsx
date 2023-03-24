@@ -18,8 +18,8 @@ const App = () => {
           <Route exact path="/item/:id" element={<ItemDetailContainer />} />
           <Route exact path="/cart" element={<Cart />} />
         </Routes>
-        <Footer />
         </CartContext>
+        <Footer />
     </BrowserRouter>
   );
 };

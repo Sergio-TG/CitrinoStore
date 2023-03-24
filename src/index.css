@@ -4,11 +4,6 @@
 
 }
 
-hr{
-  width: 100%;
-  border: 0.3px solid rgb(255, 224, 23);
-}
-
 body {
   background-color:rgb(145, 237, 181);
 }
@@ -44,14 +39,14 @@ body {
 
 }
 
-
-.greeting{
-  margin: 20px;
-  padding: 20px;
-  display: flex;
-  justify-content: center;
+hr{
+  width: 100%;
+  border: 0.3px solid rgb(15, 238, 45);
 }
 
+h3 {
+  align-items: center;
+}
 .footer {
   background-color:rgba(164, 251, 154, 0.96) ;
   -webkit-box-shadow: 0px 0px 15px 0px #6b1a64;
@@ -123,7 +118,7 @@ body {
   flex-wrap: wrap;
   align-items: center;
   gap: 30px;
-  justify-content: center;
+  justify-content: space-around;
 }
 .listProd{
   box-shadow: 1px 1px 40px black;
@@ -154,7 +149,7 @@ body {
 }
 
 .EyeVisibility{
-  font-size: 1.3rem;
+  font-size: 1.1rem;
   align-items: center;
 }
 
@@ -197,6 +192,7 @@ body {
   font-size: 1.3rem;
   transition: all 1s;
   margin: auto 10px;
+  align-items: center;
 }
 .buttonEliminar:hover{
   color: rgb(68, 40, 40);
@@ -205,26 +201,44 @@ body {
 .bloqButtonClear{
   display: flex;
   align-items: center;
-  justify-content: end;
+  justify-content: center;
+  padding: 5px;
 }
 .btnClear{
   font-weight: bolder;
-  width: 100px;
-  margin: 50px;
+  width: 20px;
+  margin: 30px;
+}
+.btn-light {
+  margin-top: 15px;
+}
+
+.text_cart {
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  color: black;
+}
+
+.buttonHome {
+align-items: center;
+width: 100px;
+margin: 60px;
+border-radius: 10px;
+background-color:#0bd842  
+
 }
 .precioTotal{
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.4rem;
-  font-weight: bolder;
-  border-end-start-radius: 25px;
+  font-weight: bold;
+  border-radius: 25px;
   border-top-left-radius: 25px;
   height: 40px;
   width: 300px;
   margin: 50px 0;
   color: black;
-  background-color: beige;
+  background-color: rgb(98, 193, 79);
 }
 
 .BloqueCount{
@@ -240,18 +254,11 @@ body {
 
 .cardProdDetail{
   margin: 20px auto;
-  height: 650px;
+  height: 730px;
   text-align: center;
   width: 500px;
 }
 
-.bloqueLoading{
-  margin-top: 50px; 
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-}
 .circule{
   margin: 15px;
   width: 100px;
@@ -259,7 +266,7 @@ body {
 }
 
 .bloqueNoItems{
-  background-color: rgb(54, 54, 54);
+  background-color: rgba(220, 248, 233, 0.3);
   border-radius: 25px;
   width: 50%;
   padding-top: 20px;
@@ -267,7 +274,7 @@ body {
   font-size: 1.3rem;
   color: beige;
   text-align: center;
-  box-shadow: 1px 1px 50px wheat;
+  box-shadow: 1px 1px 15px rgba(161, 38, 8, 0.719);
 }
 
 .BloqueForm{
@@ -278,7 +285,7 @@ body {
   margin: 30px auto;
   width: 50%;
   color: beige;
-  background-color: rgb(54, 54, 54);
+  background-color: rgb(63 181 59);
   border-radius: 25px;
   box-shadow: 1px 1px 50px wheat;
 }
@@ -287,45 +294,25 @@ body {
   margin: 10px auto;
 }
 
+.btn  {
+  width: 100%;
+  padding: 2px;
+  text-align: center;
+  align-self: center;
+  background-color: rgb(112, 242, 116);
+  border-radius: 20px;
+  -webkit-box-shadow: 0px 0px 15px 0px #0bd842;
+  box-shadow: 0px 0px 15px 0px #5a0211;
+}
 
-.spinner {
-  height: 70vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.btn-warning {
+background-color: aliceblue;
 }
 
 .loader {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  display: inline-box;
-  border-top: 6px solid #eb7405;
-  border-right: 6px solid transparent;
-  box-sizing: border-box;
-  animation: rotation 1s linear infinite;
-}
-
-.loader::after {
-  content: '';
-  box-sizing: border-box;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  border-left: 6px solid #21d60c;
-  border-bottom: 6px solid transparent;
-  animation: rotation 0.5s linear infinite reverse;
-}
-
-@keyframes rotation {
-  0% {
-      transform: rotate(0deg);
-  }
-
-  100% {
-      transform: rotate(360deg);
-  }
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
 }

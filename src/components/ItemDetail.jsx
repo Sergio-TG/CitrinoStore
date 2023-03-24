@@ -3,7 +3,7 @@ import ItemCount from './ItemCount'
 
 const ItemDetail = ({ detalleProducto }) => {
 
-    const { producto, descripcion, precio, cantidad, img, id } = detalleProducto;
+    const { producto, descripcion, precio, cantidad, img, id, category } = detalleProducto;
 
     function formatNumber(number) {
         return new Intl.NumberFormat().format(number)
@@ -17,12 +17,13 @@ const ItemDetail = ({ detalleProducto }) => {
                     className="card-img-top imgProd"
                     alt="..."
                 />
-                <div className="card-body bg-warning">
+                <div className="card-body bg-white">
                     <h5 className="card-title fw-bold">{producto}</h5>
                     <p className="card-text fw-bolder">
-                        Precio ARS: ${formatNumber(precio)}
+                        Precio : ${formatNumber(precio)}
                     </p>
-                    <p className="card-text">Descripcion: {descripcion}</p>
+                    <p className="card-text fw-bolder">Categoría: {category}</p>
+                    <p className="card-text">Descripción: {descripcion}</p>
                     <p className="card-text fw-bolder">Stock: {cantidad}</p>
                     <ItemCount stock={cantidad} id={id} precio={precio} producto={producto} img={img} />
                 </div>

@@ -21,7 +21,7 @@ function Item({ id, producto, precio, cantidad, img }) {
             Swal.fire({
                 position: "center",
                 icon: "success",
-                title: "Se agrego al carrito",
+                title: "El producto se agregó al carrito de compras",
                 showConfirmButton: false,
                 timer: 1500,
             });
@@ -44,7 +44,7 @@ function Item({ id, producto, precio, cantidad, img }) {
         <>
             <div className="card cardProd" key={id}>
                 <img
-                    src={`./public/imagenes/${img}.jpg`}
+                    src={`../src/assets/img_producto/${img}.jpg`}
                     className="card-img-top imgProd"
                     alt="..."
                 />
@@ -64,7 +64,7 @@ function Item({ id, producto, precio, cantidad, img }) {
                         </button>
                     </Link>
                     <button
-                        className="btn btn-secondary"
+                        className="btn btn-light"
                         onClick={() => agregarAlCarrito()}
                     >
                         Agregar al carrito

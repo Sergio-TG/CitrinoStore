@@ -7,12 +7,12 @@ import "../index.css";
 const CartLoading = () => {
   return (
     <div className='bloqueNoItems'>
-        <h3>
+        <h1>
         <BsFillCartXFill />
-        </h3>
-        <p>No hay productos en su carrito</p>
+        </h1>
+        <p className="text_cart">El carrito está vacío</p>
         <Link to={"/"}>
-          <button className="buttonHome bg-warning">Ir a Inicio</button>
+          <button className="buttonHome bg-grey">Ir a Inicio</button>
         </Link>
     </div>
   );

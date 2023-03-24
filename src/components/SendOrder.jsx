@@ -39,12 +39,12 @@ const SendOrder = () => {
         <>
             <div className='BloqueForm'>
                 <form onSubmit={handleSubmit}>
-                    <div className="mb-3">
-                        <label className="form-label">Email address</label>
+                    <div className="ms-auto mb-2 mb-lg-0">
+                        <label className="form-label">E-mail</label>
                         <input type="email" className="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" onChange={(e) => setEmail(e.target.value
                         )
                         } required />
-                        <label className="form-label">Nombre y apellido</label>
+                        <label className="form-label">Nombre y Apellido</label>
                         <input type="text" className="form-control" id="exampleInputEmail1" onChange={(e) => setNombre(e.target.value
                         )
                         } required />

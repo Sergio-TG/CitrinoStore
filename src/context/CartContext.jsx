@@ -4,12 +4,12 @@ import Swal from "sweetalert2";
 
 export const CounterContext = createContext(null);
 
-export const CartContext = ({ children }) => {
+export function CartContext({ children }) {
     const [cart, setCart] = useState([]);
 
     const calcularTotalCompra = () => {
         let total = 0;
-        cart.forEach((e) => total += (e.cantidad * e.precio))
+        cart.forEach((e) => total += (e.cantidad * e.precio));
         return total;
     };
 
@@ -21,8 +21,8 @@ export const CartContext = ({ children }) => {
             title: 'Producto eliminado',
             showConfirmButton: false,
             timer: 1500
-        })
-    }
+        });
+    };
 
     const removeAll = () => {
         setCart([]);
@@ -32,18 +32,18 @@ export const CartContext = ({ children }) => {
             title: 'Los productos han sido eliminados',
             showConfirmButton: false,
             timer: 1500
-        })
-    }
+        });
+    };
 
     const removeForm = () => {
         setCart([]);
-    }
+    };
 
     return (
         <CounterContext.Provider value={{ cart, setCart, removeItem, removeAll, calcularTotalCompra, removeForm }}>
             {children}
         </CounterContext.Provider>
     );
-};
+}
 
 export default CartContext;

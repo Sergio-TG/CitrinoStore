@@ -6,10 +6,15 @@
 #### Proyecto: Tienda de Cristales, Gemas y Piedras.
 #### Lenguajes utilizados y Framework: HTML, React JS, CSS
 #### Base de Datos: Firebase
-#### Librerias: 
+---
+#### Librerias y Dependencias: 
 *Sweet Alert*
 *React Icons*
 *Bootstrap 5*
+*React-Spinners*
+*React-Router-Dom*
+*@vitejs/plugin-react*
+---
 ### El ecommerce permite a los visitantes poder realizar la compra de los productos ofrecidos con la opción de seleccionar las categorías, verificar el stock, detalle, precios y finalizar su recorrido al agregar los items deseados al carrito para procesar el pedido.
 
 ***_Gif mostrando la interactividad de la tienda_***
@@ -19,4 +24,5 @@
 ~~~
 Npm run dev
 ~~~
+
 

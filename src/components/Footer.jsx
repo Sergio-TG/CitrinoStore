@@ -22,14 +22,17 @@ const Footer = () => {
                   <ul className="nav flex-column pb-lg-1 mb-lg-3">
                     <li className="nav-item"><a href="/" className="nav-link d-inline-block px-0 pt-1 pb-2">Home</a></li>
                     <li className="nav-item"><a href="/" className="nav-link d-inline-block px-0 pt-1 pb-2">Productos</a></li>
-                    <li className="nav-item"><a href="/" className="nav-link d-inline-block px-0 pt-1 pb-2">Contacto</a></li>
                   </ul>
                 </div>
               </div>
               <div className="col-xl-4 col-lg-5 pt-2 pt-lg-0" id="text-footer">
-                <h6 className="mb-2">Consultas 341 6769427</h6>
+                <h6 className="mb-2">Consultas 341 7203575</h6>
                 <a href="mailto:citrinostore@gmail.com" className="fw-medium">citrinostore@gmail.com</a>
+                <p>Rosario (2000) Santa Fe</p>
+                </div>
               </div>
+              <div class="row mapa">
+              <iframe src="https://www.google.com/maps/d/embed?mid=1Sp7mzLiDboduTyht0cwtNjyq9tOAWRM&ehbc=2E312F" width="640" height="480"></iframe>
             </div>
           </div>
         </div>
