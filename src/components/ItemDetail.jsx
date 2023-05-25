@@ -13,7 +13,7 @@ const ItemDetail = ({ detalleProducto }) => {
         <div>
             <div className="card cardProdDetail" key={id}>
                 <img
-                    src={`../img_producto/${img}.jpg`}
+                    src={img}
                     className="card-img-top imgProd"
                     alt="..."
                 />

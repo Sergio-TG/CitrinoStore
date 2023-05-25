@@ -29,7 +29,7 @@ const Cart = () => {
                         <div key={item.id}>
                             <div className="card cardWidget">
                                 <img
-                                    src={`../img_producto/${item.img}.jpg`}
+                                    src={item.img}
                                     className="card-img-top imgWidget"
                                     alt="..."
                                 />

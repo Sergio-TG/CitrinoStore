@@ -44,7 +44,7 @@ function Item({ id, producto, precio, cantidad, img }) {
         <>
             <div className="card cardProd" key={id}>
                 <img
-                    src={`../img_producto/${img}.jpg`}
+                    src={img}
                     className="card-img-top imgProd"
                     alt="..."
                 />
