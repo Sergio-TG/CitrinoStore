@@ -7,7 +7,7 @@ const Footer = () => {
         <div className="row pb-5">
           <div className="col-lg-4 col-md-6">
             <div className="navbar-brand text-dark p-0 me-0 mb-3 mb-lg-4">
-              <img src="../public/gem.svg" width="47" alt="Citrino Store" />
+              <img src="../gem.svg" width="47" alt="Citrino Store" />
               Citrino Store
             </div>
             <p className="fs-sm pb-lg-3 mb-4">Los cristales han jugado un papel clave en el aspecto espiritual de las sociedades a lo largo de la historia debido a sus propiedades únicas y su calidad estética. Y no es de extrañar: son fuente de frecuencias vibratorias que alteran la energía de su entorno.Los colores del arcoiris son una herramienta sencilla para categorizarlos. Cada color corresponde a uno de los siete chakras e influye en la energía gobernada por ese chakra. Por ejemplo: un cristal verde, como la fluorita, afecta el chakra del corazón, que trata con el amor, la empatía y las relaciones.</p>

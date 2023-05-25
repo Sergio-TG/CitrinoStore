@@ -8,7 +8,7 @@ const NavBar = () => {
         <nav className="navbar navbar-expand-lg navbar-light sticky-top" id="botonera">
             <div className="container-fluid">
                 <a className="navbar-brand" href="/">
-                    <img src="../public/gem.svg" alt="Logo" width="40" height="30" className="d-inline-block animate__animated animate__flip align-text-top"/>Citrino Store
+                    <img src="../gem.svg" alt="Logo" width="40" height="30" className="d-inline-block animate__animated animate__flip align-text-top"/>Citrino Store
                 </a>
                 <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
