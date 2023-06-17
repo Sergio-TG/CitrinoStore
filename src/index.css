@@ -89,6 +89,17 @@ h3 {
   color:grey
 }
 
+.mb-2{
+  text-decoration: none;
+  color:grey
+}
+
+.map {
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  color:grey
+}
 
 .TituloPrincipal{
   color: beige;
@@ -143,9 +154,11 @@ h3 {
   margin: 0 auto;
 }
 .cardProd{
-  height: 570px;
+  border-radius: 2px;
+  height: 500px;
   text-align: center;
-  width: 300px;
+  width: 100%;
+  margin:0.12em;
 }
 
 .EyeVisibility{
@@ -217,6 +230,11 @@ h3 {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
   color: black;
 }
+
+.p {
+text-align: justify;
+}
+
 
 .buttonHome {
 align-items: center;
